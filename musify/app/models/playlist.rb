@@ -5,6 +5,6 @@ class Playlist < ApplicationRecord
   #has_and_belongs_to_many :songs
 
   #Con modelo intermedio
-  has_many :playlist_songs
-  has_many :songs, throught: :playlist_songs
+  has_many :playlists_songs
+  has_many :songs, through: :playlists_songs
 end
