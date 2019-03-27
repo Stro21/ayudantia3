@@ -7,8 +7,19 @@
 
 <p>
   <strong>User:</strong>
-  <%= @playlist.user %>
+  <%= @playlist.user.name %>
 </p>
+
+<%= form_with(model: [@playlist, @playlist_song], local: true) do |form| %>
+  <div class="field">
+    <%= form.label :song_id %>
+    <%= form.text_field :song_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
 
 <%= link_to 'Edit', edit_playlist_path(@playlist) %> |
 <%= link_to 'Back', playlists_path %>
